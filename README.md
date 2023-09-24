@@ -27,35 +27,62 @@ Note: This is a complex process.
 1.Set Up Development Environment
 
 •	Use conda for Python distribution and related libraries on Ubuntu 20.04 OS.
+
 •	Create a new environment using the provided environment.yml file:
+
 bash code:
 conda env create -f environment.yml
+
 •	Activate the environment.
+
 2.Download Datasets and Extract
+
 Download the following datasets:
+
 •	DFDC dataset
+
 •	Celeb-DF-v2 dataset
+
 •	FFHQ dataset
+
 •	FDF dataset
+
 3.Configure Paths and Parameters
+
 •	Update paths and parameters in the config.yml file according to your dataset locations and preferences.
+
 4.Data Pre-processing
+
 Execute the following commands in sequence:
+
 •	python data_preprocess.py --gen_aug_plan
+
 •	python data_preprocess.py --apply_aug_to_all
+
 •	python data_preprocess.py --extract_landmarks
+
 •	python data_preprocess.py --crop_faces
+
 •	python data_preprocess.py --gen_mri_dataset
+
 5.MRI-GAN Training
+
 •	Configure the config.yml file and adjust parameters under ['MRI_GAN']['model_params'] as needed.
+
 •	Train the MRI-GAN model:
+
 css code:
 python train_MRI_GAN.py --train_from_scratch
+
 •	Copy trained MRI-GAN weights:
+
 bash code 
 cp logs/<date_time_stamp>/MRI_GAN/checkpoint_best_G.chkpt assets/weights/MRI_GAN_weights.chkpt
+
 •	Use the trained MRI-GAN to predict MRIs for the DFDC dataset:
+
 python data_preprocess.py --gen_dfdc_mri
+
 6.Train and Test the DeepFake Detection Model
 •	Generate metadata CSV files using:
 css code:

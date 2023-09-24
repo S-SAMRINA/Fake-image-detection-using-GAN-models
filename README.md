@@ -84,40 +84,66 @@ cp logs/<date_time_stamp>/MRI_GAN/checkpoint_best_G.chkpt assets/weights/MRI_GAN
 python data_preprocess.py --gen_dfdc_mri
 
 6.Train and Test the DeepFake Detection Model
+
 •	Generate metadata CSV files using:
+
 css code:
 python data_preprocess..py  --gen_deepfake_metadata 
+
 •	For the plain-frames method, configure the config.yml file with the following parameters:
-•	'train_transform' : 'complex'
-•	'dataset' : 'plain'
+
+1.'train_transform' : 'complex'
+2.'dataset' : 'plain'
+
 •	Train the model from scratch or resume training if needed:
+
 css code:
 python deep_fake_detectpy --train_from_scratch 
+
 •	Test the saved model:
+
 css code:
 python deep_fake_detectpy --test_saved_model <path> 
+
 •	For the MRI-based method, configure the config.yml file with the following parameters:
-•	'train_transform' : 'simple'
-•	'dataset' : 'mri'
+
+1.'train_transform' : 'simple'
+2.'dataset' : 'mri'
+
 •	Train the model from scratch or resume training if needed, and test the model similarly.
+
 7.Other Notes
+
 •	Check the --help option of all mentioned scripts for more utility methods, such as resuming training of models if it was stopped prematurely.
+
 Pre-trained Models
+
 Download the pre-trained model weights to reproduce the results:
+
 •	MRI-GAN Model with Tau = 0.3 and Generator with the Lowest Loss
+
 •	DeepFake Detection Models:
 1.	Plain-Frames Based Model
 2.	MRI-Based Model
+
 DeepFake Detection App
+
 Use the model to test a given video file:
 1.	Download all pre-trained model weights.
-2.	Run the command-line app:
+2.	Run the command-line app.
+   
 css code:
 python detect_deepfake_app.py --input_videofile <path to video file> --method <detection method>> 
+
 •	The detection method can be either plain_frames or MRI.
+
+
 Citation
+
 If you use this work, please cite it as:
+
 makefile code:
+
 @misc{2203.00108,
 Author = {Pratikkumar Prajapati and Chris Pollett},
 Title = {MRI-GAN: A Generalized Approach to Detect DeepFakes using Perceptual Image Assessment},

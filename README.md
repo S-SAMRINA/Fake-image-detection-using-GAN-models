@@ -138,15 +138,4 @@ python detect_deepfake_app.py --input_videofile <path to video file> --method <d
 •	The detection method can be either plain_frames or MRI.
 
 
-Citation
 
-If you use this work, please cite it as:
-
-makefile code:
-
-@misc{2203.00108,
-Author = {Pratikkumar Prajapati and Chris Pollett},
-Title = {MRI-GAN: A Generalized Approach to Detect DeepFakes using Perceptual Image Assessment},
-Year = {2022},
-Eprint = {arXiv:2203.00108},
-}

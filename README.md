@@ -1,19 +1,31 @@
 # Fake-image-detection-using-GAN-models
  Challenging Fake Image Detection using GAN Models
-MRI-GAN: A Generalized Approach to Detect Deep Fakes using Perceptual Image Assessment
+MRI-GAN: 
+
+A Generalized Approach to Detect Deep Fakes using Perceptual Image Assessment
+
 This README provides an overview of the scope of the MRI-GAN project, sample results, and steps required to replicate the work, both from scratch and using pre-trained models. Reproducing the results from scratch involves training all the models. Data processing steps are also outlined below.
 The full research paper is available at:  https://arxiv.org/abs/2203.00108
 TLDR.
+
+
 Abstract
+
 DeepFakes are synthetic videos created by replacing a face in an original image with someone else's face. This project focuses on developing deep learning models for classifying DeepFake content. We introduce a novel framework called MRI-GAN, which leverages Generative Adversarial Network (GAN)-based models to detect synthesized videos based on perceptual differences in images. We evaluate our MRI-GAN approach and a plain-frames-based model using the DeepFake Detection Challenge Dataset. Our plain frames-based model achieves 91% test accuracy, while the MRI-GAN framework with Structural Similarity Index Measurement (SSIM) for perceptual differences achieves 74% test accuracy. The MRI-GAN results are preliminary and can potentially be improved further by adjusting loss functions, hyperparameters, or using advanced perceptual similarity metrics.
 
+
 MRI-GAN
+
 MRI-GAN generates MRIs of input images. The MRI for a DeepFake image contains artifacts that highlight regions of synthesized pixels, while the MRI of a non-DeepFake image is simply a black image.
 https://d.docs.live.net/f38bd683e309f3ac/Documents/blank.png
+
  
 Steps to Replicate the Work
+
 Note: This is a complex process.
+
 1.Set Up Development Environment
+
 •	Use conda for Python distribution and related libraries on Ubuntu 20.04 OS.
 •	Create a new environment using the provided environment.yml file:
 bash code:
